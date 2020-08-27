@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_27_123559) do
+ActiveRecord::Schema.define(version: 2020_08_27_131119) do
 
   create_table "e_bills", force: :cascade do |t|
     t.integer "store_id"
@@ -23,9 +23,9 @@ ActiveRecord::Schema.define(version: 2020_08_27_123559) do
   create_table "store_equipments", force: :cascade do |t|
     t.integer "store_id"
     t.string "genre_name"
-    t.boolean "display_status?", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "display_status", default: true, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,19 +37,19 @@ ActiveRecord::Schema.define(version: 2020_08_27_123559) do
     t.string "kana_first_name", default: "", null: false
     t.integer "birthday", default: 0, null: false
     t.integer "job_title", default: 0, null: false
-    t.boolean "permit_to_store_manager?", default: false, null: false
-    t.boolean "get_restaurant_sales_permit_form?", default: false, null: false
-    t.boolean "related_with_antisocial_force?", default: false, null: false
-    t.boolean "mannaers_industry?", default: false, null: false
     t.string "nickname", default: "", null: false
     t.string "image_id", default: "", null: false
-    t.boolean "unsubscribe_status?", default: true, null: false
     t.integer "role", default: 3, null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "mannaers_industry"
+    t.boolean "permit_to_store_manager"
+    t.boolean "get_restaurant_sales_permit_form"
+    t.boolean "related_with_antisocial_force"
+    t.boolean "unsubscribe_status"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
