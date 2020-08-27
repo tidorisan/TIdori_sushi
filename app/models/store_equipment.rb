@@ -1,0 +1,3 @@
+class StoreEquipment < ApplicationRecord
+
+end
