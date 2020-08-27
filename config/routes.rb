@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'tidori_sushi/stores#top'
 
   namespace :tidori_sushi do
