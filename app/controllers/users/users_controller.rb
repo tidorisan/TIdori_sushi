@@ -1,5 +1,4 @@
 class Users::UsersController < ApplicationController
-
 	def confirmation
 	end
 
@@ -8,9 +7,12 @@ class Users::UsersController < ApplicationController
 	end
 
 	def create
-
 	end
 
+	def leave
+	end
 
+	def unsubscribe_update
+	end
 
 end
